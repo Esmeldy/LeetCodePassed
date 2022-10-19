@@ -28,7 +28,7 @@ public class TwoSum2 {
         int [] nums = {2,7,11,15};
         int target = 9;
 
-        int result [] = twoSum(nums, target);
+        int[] result = twoSum(nums, target);
 
         for (int i: result ) {
             System.out.println(i);
