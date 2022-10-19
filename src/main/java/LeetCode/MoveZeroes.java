@@ -26,7 +26,7 @@ public class MoveZeroes {
         for (int i = 0; i < nums.length ; i++) {
             if (nums[i] != 0) { //si es un numero
                 int temp = nums[index];
-                nums[index] = nums[i];
+                nums[index] = nums[i]; //se intercambia la posición
                 nums[i] = temp;
                 index++;
             }
