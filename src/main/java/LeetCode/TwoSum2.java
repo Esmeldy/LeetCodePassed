@@ -25,10 +25,17 @@ import java.util.HashMap;
  */
 public class TwoSum2 {
     public static void main(String[] args) {
+        int [] nums = {2,7,11,15};
+        int target = 9;
 
+        int result [] = twoSum(nums, target);
+
+        for (int i: result ) {
+            System.out.println(i);
+        }
     }
 
-    public int[] twoSum(int[] numbers, int target) {
+    public static int[] twoSum(int[] numbers, int target) {
         var x = new HashMap<Integer,Integer>();
 
         for (int i =0; i< numbers.length;i++){
