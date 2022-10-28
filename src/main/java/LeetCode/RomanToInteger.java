@@ -12,12 +12,12 @@ import java.util.HashMap;
  */
 public class RomanToInteger {
     public static void main(String[] args) {
-        String num = "IIIX";
+        String num = "MCMXCIV";
         System.out.println(romanToInt(num));
     }
 
-    public static <Char> int romanToInt(String s) {
-        char letter = 0;
+    public static int romanToInt(String s) {
+
         int result = 0;
         HashMap<Character, Integer> romans = new HashMap<>();
         romans.put('I',1);
@@ -28,18 +28,23 @@ public class RomanToInteger {
         romans.put('D',500);
         romans.put('M',1000);
 
-        if (s.length() < 2 ) result = romans.get(s);
+     //   if (s.length() < 2 ) result = romans.get(s.charAt(0));
 
         for (int i=0; i<s.length();i++) {
-                letter = s.charAt(i);
 
-            result += romans.get(letter);
+            int numCurrent = romans.get(s.charAt(i));
+          //  int nextNum = romans.get(s.charAt(i+1));
+
             //Si el número actual es menor al siguiente se resta
-
+            //al resultado
+            //el i+1 para asegurarnos de no salir del Array
+            if (i + 1 < s.length() && numCurrent < romans.get(s.charAt(i+1))){
+                result -= numCurrent;
+            }
+            else {
+                result += numCurrent;
+            }
         }
-
-
-
         return result;
     }
 }
